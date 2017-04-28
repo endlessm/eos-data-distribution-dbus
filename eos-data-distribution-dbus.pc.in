@@ -1,0 +1,14 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: @PACKAGE_NAME@
+Version: @PACKAGE_VERSION@
+Description: A convenience library to use gdbus-codegen bindings to eos-data-distribution DBus interfaces
+URL: @PACKAGE_URL@
+
+Requires: @EDDD_REQUIRED_MODULES_PUBLIC@
+Requires.private:
+Cflags: -I${includedir}/@EDDD_API_NAME@
+Libs: -L${libdir} -leos-data-distribution-dbus-@EDDD_API_VERSION@
