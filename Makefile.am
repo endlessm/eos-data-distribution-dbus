@@ -25,19 +25,28 @@ AM_CFLAGS = $(LIBEOS_DATA_DISTRIBUTION_DBUS_CFLAGS)
 INTROSPECTION_GIRS = EosDataDistributionDbus-@EDDD_API_VERSION@.gir
 INTROSPECTION_SCANNER_ARGS = --warn-all --warn-error
 
-eos-data-distribution-dbus-producer.h eos-data-distribution-dbus-producer.c: eos-data-distribution-dbus-producer.xml Makefile
+eos-data-distribution-dbus-base-producer.h eos-data-distribution-dbus-base-producer.c: eos-data-distribution-dbus-base-producer.xml Makefile
 	$(AM_V_GEN) $(GDBUS_CODEGEN) \
 		--interface-prefix com.endlessm.DataDistribution. \
-		--generate-c-code eos-data-distribution-dbus-producer \
+		--generate-c-code eos-data-distribution-dbus-base-producer \
+		--c-namespace EosDataDistributionDbus \
+		$<
+
+eos-data-distribution-dbus-chunks-producer.h eos-data-distribution-dbus-chunks-producer.c: eos-data-distribution-dbus-chunks-producer.xml Makefile
+	$(AM_V_GEN) $(GDBUS_CODEGEN) \
+		--interface-prefix com.endlessm.DataDistribution. \
+		--generate-c-code eos-data-distribution-dbus-chunks-producer \
 		--c-namespace EosDataDistributionDbus \
 		$<
 
 eos_data_distribution_dbus_headers = \
-	eos-data-distribution-dbus-producer.h \
+	eos-data-distribution-dbus-base-producer.h \
+	eos-data-distribution-dbus-chunks-producer.h \
 	$(NULL)
 
 eos_data_distribution_dbus_sources = \
-	eos-data-distribution-dbus-producer.c \
+	eos-data-distribution-dbus-base-producer.c \
+	eos-data-distribution-dbus-chunks-producer.c \
 	$(NULL)
 
 edddincludedir = $(includedir)/@EDDD_API_NAME@/@PACKAGE_NAME@

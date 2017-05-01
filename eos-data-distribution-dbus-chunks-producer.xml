@@ -1,15 +1,15 @@
 <node>
-<interface name='com.endlessm.DataDistribution.Producer'>
+<interface name='com.endlessm.DataDistribution.ChunksProducer'>
 <method name='RequestInterest'>
     <arg type='s' direction='in'  name='name' />
     <arg type='h' direction='in'  name='fd' />
     <arg type='i' direction='in'  name='first_segment' />
+    <arg type='i' direction='out' name='final_segment' />
 </method>
 <signal name='progress'>
     <arg type='s' direction='out' name='name' />
     <arg type='i' direction='out' name='first_segment' />
-    <arg type='i' direction='out' name='current_segment' />
-    <arg type='i' direction='out' name='final_segment' />
+    <arg type='i' direction='out' name='last_segment' />
 </signal>
 </interface>
 </node>
