@@ -27,6 +27,8 @@ INTROSPECTION_SCANNER_ARGS = --warn-all --warn-error
 
 eos-data-distribution-dbus-base-producer.h eos-data-distribution-dbus-base-producer.c: eos-data-distribution-dbus-base-producer.xml Makefile
 	$(AM_V_GEN) $(GDBUS_CODEGEN) \
+		--c-generate-autocleanup all  \
+		--c-generate-object-manager \
 		--interface-prefix com.endlessm.DataDistribution. \
 		--generate-c-code eos-data-distribution-dbus-base-producer \
 		--c-namespace EosDataDistributionDbus \
@@ -34,6 +36,8 @@ eos-data-distribution-dbus-base-producer.h eos-data-distribution-dbus-base-produ
 
 eos-data-distribution-dbus-chunks-producer.h eos-data-distribution-dbus-chunks-producer.c: eos-data-distribution-dbus-chunks-producer.xml Makefile
 	$(AM_V_GEN) $(GDBUS_CODEGEN) \
+		--c-generate-autocleanup all \
+		--c-generate-object-manager \
 		--interface-prefix com.endlessm.DataDistribution. \
 		--generate-c-code eos-data-distribution-dbus-chunks-producer \
 		--c-namespace EosDataDistributionDbus \
