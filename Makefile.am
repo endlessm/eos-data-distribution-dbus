@@ -30,8 +30,8 @@ eos-data-distribution-dbus-base-producer.h eos-data-distribution-dbus-base-produ
 		--c-generate-autocleanup all  \
 		--c-generate-object-manager \
 		--interface-prefix com.endlessm.DataDistribution. \
-		--generate-c-code eos-data-distribution-dbus-base-producer \
 		--c-namespace EosDataDistributionDbus \
+		--generate-c-code eos-data-distribution-dbus-base-producer \
 		$<
 
 eos-data-distribution-dbus-chunks-producer.h eos-data-distribution-dbus-chunks-producer.c: eos-data-distribution-dbus-chunks-producer.xml Makefile
@@ -39,8 +39,9 @@ eos-data-distribution-dbus-chunks-producer.h eos-data-distribution-dbus-chunks-p
 		--c-generate-autocleanup all \
 		--c-generate-object-manager \
 		--interface-prefix com.endlessm.DataDistribution. \
+		--c-namespace EosDataDistributionDbusChunks \
 		--generate-c-code eos-data-distribution-dbus-chunks-producer \
-		--c-namespace EosDataDistributionDbus \
+		--annotate "com.endlessm.DataDistribution.ChunksProducer.RequestInterest()" org.gtk.GDBus.C.UnixFD true \
 		$<
 
 eos_data_distribution_dbus_headers = \
