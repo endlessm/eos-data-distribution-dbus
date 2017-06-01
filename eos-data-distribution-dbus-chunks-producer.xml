@@ -4,6 +4,7 @@
     <arg type='s' direction='in'  name='name' />
     <arg type='h' direction='in'  name='fd' />
     <arg type='i' direction='in'  name='first_segment' />
+    <arg type='s' direction='out' name='name' />
     <arg type='i' direction='out' name='final_segment' />
 </method>
 <method name='Complete'>
