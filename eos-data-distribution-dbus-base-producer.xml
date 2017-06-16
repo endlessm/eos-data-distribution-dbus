@@ -1,9 +1,9 @@
 <node>
-<interface name='com.endlessm.DataDistribution.BaseProducer'>
-<method name='RequestInterest'>
-    <arg type='s' direction='in'  name='name' />
-    <arg type='s' direction='out' name='name' />
-    <arg type='s' direction='out' name='data' />
-</method>
-</interface>
+    <interface name='com.endlessm.DataDistribution.BaseProducer'>
+        <method name='RequestInterest'>
+            <arg type='s' direction='in'  name='name' />
+            <arg type='s' direction='out' name='name' />
+            <arg type='s' direction='out' name='data' />
+        </method>
+    </interface>
 </node>
