@@ -1,5 +1,11 @@
 <node>
     <interface name='com.endlessm.DataDistribution.ChunksProducer'>
+        <method name='DiscoverVersion'>
+            <arg type='s' direction='in'  name='name' />
+            <arg type='s' direction='out' name='name' />
+            <arg type='i' direction='out' name='final_segment' />
+        </method>
+
         <method name='RequestInterest'>
             <arg type='s' direction='in'  name='name' />
             <arg type='h' direction='in'  name='fd' />
